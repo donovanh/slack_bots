@@ -234,6 +234,13 @@ controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your na
 
     });
 
+controller.hears(['potato', 'hungry', 'lunch', 'stew', 'eat'],
+    'direct_message,direct_mention,mention', function(bot, message) {
+
+  bot.reply(message, 'Po-ta-toes! Boil them, mash them, stick them in a stew. Lovely big golden chips with a nice piece of fried fish.');
+
+});
+
 function formatUptime(uptime) {
     var unit = 'second';
     if (uptime > 60) {
