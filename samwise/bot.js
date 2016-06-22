@@ -70,12 +70,6 @@ if (!process.env.token) {
     process.exit(1);
 }
 
-// Start a server to help Heroku
-const http = require('http');
-http.createServer(function (request, response) {
-  console.log('Server listening on: ', process.env.PORT || 5123);
-}).listen(process.env.PORT || 5123);
-
 var Botkit = require('./lib/Botkit.js');
 var os = require('os');
 
@@ -234,8 +228,15 @@ controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your na
 
     });
 
-controller.hears(['potato', 'hungry', 'lunch', 'stew', 'eat'],
+controller.hears(['hungry', 'lunch', 'stew', 'fish'],
     'direct_message,direct_mention,mention', function(bot, message) {
+
+  bot.reply(message, 'Po-ta-toes! Boil them, mash them, stick them in a stew. Lovely big golden chips with a nice piece of fried fish.');
+
+});
+
+controller.hears(['potato', 'potatoes'],
+    'ambient', function(bot, message) {
 
   bot.reply(message, 'Po-ta-toes! Boil them, mash them, stick them in a stew. Lovely big golden chips with a nice piece of fried fish.');
 
