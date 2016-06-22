@@ -1,0 +1,12 @@
+{
+  "apps" : [{
+    "name"        : "samwise_bot",
+    "script"      : "./bot.js",
+    "args"        : [],
+    "instances"   : 1,
+    "watch"       : true,
+    "env": {
+        "token": "xoxb-53173570646-mKorhHd6Mkax0AB7LD9M6SeP"
+    }
+  }]
+}

@@ -1,3 +1,4 @@
+'use strict';
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
            ______     ______     ______   __  __     __     ______
           /\  == \   /\  __ \   /\__  _\ /\ \/ /    /\ \   /\__  _\
@@ -69,11 +70,17 @@ if (!process.env.token) {
     process.exit(1);
 }
 
+// Start a server to help Heroku
+const http = require('http');
+http.createServer(function (request, response) {
+  console.log('Server listening on: ', process.env.PORT || 5123);
+}).listen(process.env.PORT || 5123);
+
 var Botkit = require('./lib/Botkit.js');
 var os = require('os');
 
 var controller = Botkit.slackbot({
-    debug: true
+    debug: false
 });
 
 var bot = controller.spawn({
