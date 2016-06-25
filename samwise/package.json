@@ -8,6 +8,7 @@
     "back": "^1.0.1",
     "body-parser": "^1.14.2",
     "cheerio": "^0.20.0",
+    "cleverbot.io": "^1.0.4",
     "command-line-args": "^2.1.6",
     "express": "^4.13.3",
     "https-proxy-agent": "^1.0.0",

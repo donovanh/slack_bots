@@ -22,7 +22,19 @@ if (!process.env.token) {
 var Botkit = require('./lib/Botkit.js'),
     os = require('os'),
     request = require('request'),
-    cheerio = require('cheerio');
+    cheerio = require('cheerio'),
+    cleverbot = require("cleverbot.io");
+
+// Set up Cleverbot
+cleverbot = new cleverbot('yLJ0MVansAcnZ2Ld', 'bh10geGMxEImF42bGqcOj2KlHWifxzDh');
+cleverbot.setNick("Bob");
+cleverbot.create(function (err, session) {
+    if (err) {
+        console.log('cleverbot create fail.');
+    } else {
+        console.log('cleverbot create success.');
+    }
+});
 
 var controller = Botkit.slackbot({
   debug: false
@@ -202,6 +214,18 @@ function getWeather(url, callback) {
     }
   });
 }
+
+// Fallback (default to cleverbot)
+controller.hears('','direct_message,direct_mention,mention',function(bot,message) {
+  var msg = message.text;
+  cleverbot.ask(msg, function (err, response) {
+    if (!err) {
+      bot.reply(message, response);
+    } else {
+      console.log('cleverbot err: ' + err + ' ' + response);
+    }
+  });
+})
 
 function formatUptime(uptime) {
   var unit = 'second';
