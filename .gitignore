@@ -4,4 +4,3 @@ node_modules/
 .env
 pm2.json
 token.txt
-data/**/*.json
