@@ -1,0 +1,12 @@
+{
+  "apps" : [{
+    "name"        : "process_name",
+    "script"      : "./bot.js",
+    "args"        : [],
+    "instances"   : 1,
+    "watch"       : true,
+    "env": {
+        "token": ""
+    }
+  }]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "mentalbot",
+  "version": "0.0.1",
+  "description": "Based on Howdy's Botkit",
+  "main": "lib/Botkit.js",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "back": "^1.0.1",
+    "body-parser": "^1.14.2",
+    "command-line-args": "^2.1.6",
+    "express": "^4.13.3",
+    "https-proxy-agent": "^1.0.0",
+    "jfs": "^0.2.6",
+    "localtunnel": "^1.8.1",
+    "mustache": "^2.2.1",
+    "ware": "^1.3.0",
+    "ws": "^1.0.1"
+  },
+  "devDependencies": {
+    "jscs": "^2.7.0",
+    "mocha": "^2.4.5",
+    "should": "^8.0.2",
+    "winston": "^2.1.1"
+  },
+  "scripts": {
+    "pretest": "jscs ./lib/",
+    "test": "mocha tests/*.js"
+  },
+  "homepage": "",
+  "keywords": [
+    "bots",
+    "chatbots",
+    "slack"
+  ],
+  "author": "d@hop.ie",
+  "license": "MIT"
+}
