@@ -30,6 +30,21 @@ var bot = new SlackBot({
 
 // TODO: put these into a better named Refurb Scraping library
 
+function buildAttachments(result, color) {
+  let text = result.description+ '\n';
+  text += result.price;
+  return {
+    "attachments": [{
+      "title": result.title,
+      "title_link": result.link,
+      "text": text,
+      "image_url": result.image,
+      "icon_emoji": ':robot_face:',
+      "color": color
+    }]
+  };
+}
+
 function showResults(results) {
   jsonfile.readFile(storageFile, function(err, data) {
     let numberOfItems = data.ids.length;
@@ -38,12 +53,10 @@ function showResults(results) {
         // Insert this item to the results
         data.ids.push(result.id);
         // Broadcast this item (it's new)
-        let message = result.title + ' ' + result.link;
-        bot.postMessageToChannel('refurbs', message, params);
-        // Check if it matches this user's refurb keywords
+        bot.postMessageToChannel('refurbs', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
         if (isMatch(result.matchText, refurbSettings.keywords)) {
           // If it does, send a private message
-          bot.postMessageToUser('donovanh', message, params);
+          bot.postMessageToUser('donovanh', 'I found a match for you on the Apple refurb store!', buildAttachments(result, '#96E23E'));
         }
       }
     });

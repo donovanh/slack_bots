@@ -8,8 +8,9 @@ function cleanDescription(description) {
     .split('</h3>')[1]
     .split('</p>')[1]
     .replace(/(?:\r\n|\r|\n)/g, '')
+    .replace(/<br>/g, '\n')
     .trim();
-  return '<p>' + updatedDescription + '</p>';
+  return updatedDescription;
 }
 
 module.exports = function(url) {
@@ -28,10 +29,11 @@ module.exports = function(url) {
         const results = [];
         $('.product').each(function(i, element){
           let id = $(this).find('.specs h3 a').attr('data-s-object-id');
-          let image = $(this).find('img').attr('src');
+          let image = $(this).find('img').attr('src').replace('wid=110&hei=78', 'wid=330&hei=234');
           let matchText = $(this).find('.specs').text().toLowerCase().replace(/\W+/g, " ");
           let title = $(this).find('.specs h3 a').text().trim();
           let link = 'http://apple.com' + $(this).find('.specs h3 a').attr('href');
+          let price = $(this).find('.price').text().trim();
           let description = cleanDescription($(this).find('.specs').html());
           // Extract the title, description and image
           results.push({
@@ -39,6 +41,7 @@ module.exports = function(url) {
             image: image,
             link: link,
             title: title,
+            price: price,
             description: description,
             matchText: matchText
           });

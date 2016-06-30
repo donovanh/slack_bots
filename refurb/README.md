@@ -10,6 +10,7 @@ Currently it:
 
 To do:
 
+* Nicer looking messages with images and descriptions
 * Set up the concept of users, with their own keywords
 * Post new items to users if they match the keywords
 * Add in locale support
@@ -17,3 +18,8 @@ To do:
 * Create a "Add to Slack" button for sharing
 * ???
 * Profit
+
+Possible related uses:
+
+* Gold box filtered deal alerts
+* ... other online retailers with affiliate schemes?
