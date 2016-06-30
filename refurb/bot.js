@@ -86,14 +86,5 @@ setInterval(function() {
 }, 60*1000); // Once per minute
 
 bot.on('start', function() {
-  // more information about additional params https://api.slack.com/methods/chat.postMessage
-  // define channel, where bot exist. You can adjust it there https://my.slack.com/services
-  //bot.postMessageToChannel('general', 'meow!', params);
-
-  // define existing username instead of 'user_name'
-  bot.postMessageToUser('donovanh', 'I am alive!', params);
   checkForNewResults();
-
-  // define private group instead of 'private_group', where bot exist
-  //bot.postMessageToGroup('private_group', 'meow!', params);
 });
