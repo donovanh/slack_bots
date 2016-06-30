@@ -31,15 +31,14 @@ var bot = new SlackBot({
 // TODO: put these into a better named Refurb Scraping library
 
 function buildAttachments(result, color) {
-  let text = result.description+ '\n';
-  text += result.price;
+  let text = '*' + result.price + '*\n';
+  text += result.description;
   return {
     "attachments": [{
       "title": result.title,
       "title_link": result.link,
       "text": text,
       "image_url": result.image,
-      "icon_emoji": ':robot_face:',
       "color": color
     }]
   };
