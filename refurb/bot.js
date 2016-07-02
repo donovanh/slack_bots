@@ -11,21 +11,13 @@ if (!process.env.token) {
 // create a bot
 var bot = new SlackBot({
   token: process.env.token,
-  name: 'refurb'
+  name: 'furby'
 });
-
-bot.on('start', function() {
-  checkForNewResults();
-});
-
-setInterval(function() {
-  checkForNewResults();
-}, 60*1000); // Once per minute
 
 const furbySettings = {
   url: 'http://www.apple.com/ie/shop/browse/home/specialdeals/mac',
   keywords: [
-    'mac'
+    'macbook pro'
   ]
 };
 
@@ -37,3 +29,11 @@ function checkForNewResults() {
       furby.postMatchedResultsToUser(bot, results, 'donovanh', furbySettings.keywords);
     });
 }
+
+bot.on('start', function() {
+  checkForNewResults();
+});
+
+setInterval(function() {
+  checkForNewResults();
+}, 60*1000); // Once per minute
