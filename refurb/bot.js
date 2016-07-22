@@ -7,8 +7,7 @@ const SlackBot = require('slackbots'),
 const refurbSettings = {
   url: 'http://www.apple.com/ie/shop/browse/home/specialdeals/mac',
   keywords: [
-    'macbook pro',
-    '2014'
+    'macbook pro'
   ]
 };
 
@@ -25,7 +24,7 @@ if (!process.env.token) {
 // create a bot
 var bot = new SlackBot({
   token: process.env.token, // Add a bot https://my.slack.com/services/new/bot and put the token
-  name: 'refurb'
+  name: 'furby'
 });
 
 // TODO: put these into a better named Refurb Scraping library
