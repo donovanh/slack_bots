@@ -4,7 +4,13 @@ function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
   results.forEach(function(result) {
     console.log('Result ' + result.title);
-    bot.postMessageToChannel('dev', 'Test message: ' + result.title);
+    bot.postMessageToChannel('dev', 'Test message: ' + result.title)
+    .then(function(response) {
+      console.log('Message finished: ' + response);
+    })
+    .catch(function(error) {
+      console.log('Message failed: ' + error);
+    });
   }); 
   // results = ['a', 'b'];
   // results.forEach(function(result) {
