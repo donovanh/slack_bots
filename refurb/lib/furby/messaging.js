@@ -11,7 +11,7 @@ function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found at ' + datetime);
   results.forEach(function(result) {
     bot.postMessageToChannel('dev', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
-    console.log('dev', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
+    console.log('dev', 'New item found! (' + datetime + ')', JSON.stringify(buildAttachments(result, '#764FA5')));
   }); 
 }
 
@@ -29,13 +29,18 @@ function buildAttachments(result, color) {
   text += result.description;
   return {
     "icon_emoji": ":apple:",
-    "attachments": [{
-      "title": result.title,
-      "title_link": result.link,
-      "text": text,
-      "image_url": result.image,
-      "color": color
-    }]
+    "attachments": [
+      {
+        "title": result.title,
+        "title_link": result.link,
+        "text": text,
+        "image_url": result.image,
+        "color": color,
+        "mrkdwn_in": [
+          "text"
+        ]
+      }
+    ]
   };
 }
 function buildRegex(keywords) {
