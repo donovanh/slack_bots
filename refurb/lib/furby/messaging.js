@@ -1,16 +1,9 @@
 'use strict';
 
 function postNewResultsToChannel(bot, results) {
-  var currentdate = new Date(); 
-  var datetime = currentdate.getDate() + "/"
-                  + (currentdate.getMonth()+1)  + "/" 
-                  + currentdate.getFullYear() + " @ "  
-                  + currentdate.getHours() + ":"  
-                  + currentdate.getMinutes() + ":" 
-                  + currentdate.getSeconds();
-  console.log(results.length + ' new results found at ' + datetime);
-  console.log("Results: ", results);
+  console.log(results.length + ' new results found');
   results.forEach(function(result) {
+    console.log('In the loop');
     bot.postMessageToChannel('dev', 'results found...');
     bot.postMessageToChannel('dev', buildAttachments(result, '#764FA5'));
   }); 
