@@ -2,12 +2,12 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  var array2 = Array.prototype.slice.call(results);
-  array2.forEach(function(result) {
+  results = [{title: 'a'}, {title: 'b'}];
+  results.forEach(function(result) {
     console.log('Result ' + result.title);
     bot.postMessageToChannel('dev', 'Test message: ' + result.title);
   }); 
-  // results = ['a', 'b'];
+  // results = [{title: 'a'}, {title: 'b'}];
   // results.forEach(function(result) {
   //   bot.postMessageToChannel('dev', 'Test message ' + result);
   // }); 
