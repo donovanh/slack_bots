@@ -21,14 +21,6 @@ router.get('/installed', function(req, res, next) {
     }
     let response = JSON.stringify(body);
     // Response
-    /*
-      {"ok":true,"access_token":"xoxp-15550051014-15550051062-56509410246-fde319a3b1",
-      "scope":"identify,bot,incoming-webhook","user_id":"U0FG61H1U","team_name":"donovanh",
-      "team_id":"T0FG61H0E","incoming_webhook":{"channel":"#refurbs","channel_id":"C1MPWH42G",
-      "configuration_url":"https:\/\/donovanh.slack.com\/services\/B1NFFA8JD",
-      "url":"https:\/\/hooks.slack.com\/services\/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"},
-      "bot":{"bot_user_id":"U1NFJCCEN","bot_access_token":"xoxb-56528420498-4FeRCdxnbCtZfsmP5X02S4Sd"}}
-    */
     if (response.ok) {
       // Set up the user locally
       console.log('Response: ', response);
