@@ -31,14 +31,14 @@ function checkForNewResults() {
     });
 }
 
+// TODO: Clear any timed events hanging around
+// Put in a timed check to look for new items
+// Restarting was causing issues with settimeout
+
 bot.on('start', function() {
   console.log('Furby bot started');
   checkForNewResults();
 });
-
-setInterval(function() {
-  checkForNewResults();
-}, 60*1000); // Once per minute
 
 // Web requires
 const express = require('express'),
