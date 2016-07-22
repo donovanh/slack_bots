@@ -2,11 +2,14 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  results.forEach(function(result) {
-    console.log('The bot: ', bot.postMessageToChannel);
-    bot.postMessageToUser('donovanh', 'hey');
-    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', '');
-  }); 
+  for (let i = 0; i < results.length; i++) {
+    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
+  }
+  // results.forEach(function(result) {
+  //   console.log('The bot: ', bot.postMessageToChannel);
+  //   bot.postMessageToUser('donovanh', 'hey');
+  //   bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', '');
+  // }); 
 }
 
 function postMatchedResultsToUser(bot, results, user, keywords) {
