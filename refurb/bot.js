@@ -51,7 +51,7 @@ function showResults(results) {
         // Insert this item to the results
         data.ids.push(result.id);
         // Broadcast this item (it's new)
-        bot.postMessageToChannel('refurbs', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
+        bot.postMessageToChannel('dev', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
         if (isMatch(result.matchText, refurbSettings.keywords)) {
           // If it does, send a private message
           bot.postMessageToUser('donovanh', 'I found a match for you on the Apple refurb store!', buildAttachments(result, '#96E23E'));
@@ -97,5 +97,6 @@ setInterval(function() {
 }, 60*1000); // Once per minute
 
 bot.on('start', function() {
+  console.log('Bot working');
   checkForNewResults();
 });
