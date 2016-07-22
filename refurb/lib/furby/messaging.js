@@ -3,7 +3,7 @@
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
   for (let i = 0; i < results.length; i++) {
-    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
+    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(results[i], '#764FA5'));
   }
   // results.forEach(function(result) {
   //   console.log('The bot: ', bot.postMessageToChannel);
