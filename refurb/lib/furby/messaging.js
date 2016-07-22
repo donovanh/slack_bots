@@ -2,15 +2,10 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  results.forEach(function(result) {
+  var array2 = Array.prototype.slice.call(results);
+  array2.forEach(function(result) {
     console.log('Result ' + result.title);
-    bot.postMessageToChannel('dev', 'Test message: ' + result.title)
-    .then(function(response) {
-      console.log('Message finished: ' + response);
-    })
-    .catch(function(error) {
-      console.log('Message failed: ' + error);
-    });
+    bot.postMessageToChannel('dev', 'Test message: ' + result.title);
   }); 
   // results = ['a', 'b'];
   // results.forEach(function(result) {
