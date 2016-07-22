@@ -3,8 +3,7 @@
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
   results.forEach(function(result) {
-      //bot.postMessageToChannel('dev', '', {"icon_emoji":":apple:","attachments":[{"pretext": "Hey yo", "title":"Refurbished 13.3-inch MacBook Pro 2.5GHz Dual-core Intel i5","title_link":"http://apple.com/ie/shop/product/G0MT5B/A/refurbished-133-inch-macBook-Pro-25ghz-Dual-core-Intel-i5","text":"*€1,159.00*\nOriginally released June 2012\n13.3-inch (diagonal) LED-backlit glossy widescreen display, 1280-by-800 resolution\n8GB (2 x 4GB) of 1600MHz DDR3 SDRAM\n500GB Serial ATA @ 5400 rpm\n8x double-layer SuperDrive (DVD&#xB1;R DL/DVD&#xB1;RW/CD-RW)\nIntel HD Graphics 4000","image_url":"http://store.storeimages.cdn-apple.com/4662/as-images.apple.com/is/image/AppleInc/aos/published/images/r/ef/refurb/macbookpro/refurb-macbookpro-13in-mavericks?wid=330&hei=234&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,1.5,0,0&iccEmbed=0&layer=comp&.v=Ouall2","color":"#764FA5","mrkdwn_in":["text"]}]});
-    //bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
+    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
   }); 
 }
 
