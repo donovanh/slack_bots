@@ -2,13 +2,13 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  // results.forEach(function(result) {
-  //   bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(results[i], '#764FA5'));
-  // }); 
-  results = ['a', 'b'];
   results.forEach(function(result) {
-    bot.postMessageToChannel('dev', 'Test message ' + result);
+    bot.postMessageToChannel('dev', 'Test message: ' + result.title);
   }); 
+  // results = ['a', 'b'];
+  // results.forEach(function(result) {
+  //   bot.postMessageToChannel('dev', 'Test message ' + result);
+  // }); 
 }
 
 function postMatchedResultsToUser(bot, results, user, keywords) {
