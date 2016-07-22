@@ -1,9 +1,9 @@
 'use strict';
 
 function postNewResultsToChannel(bot, results) {
-  //console.log(results.length + ' new results found');
+  console.log(results.length + ' new results found');
   results.forEach(function(result) {
-    bot.postMessageToChannel('refurbs', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
+    //bot.postMessageToChannel('refurbs', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
   }); 
 }
 
