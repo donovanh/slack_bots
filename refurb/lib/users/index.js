@@ -3,9 +3,7 @@
 
 const routes = require('routes'),
       express = require('express'),
-      app = express();
-
-const express = require('express'),
+      app = express(),
       router = express.Router(),
       request = require('request');
 
