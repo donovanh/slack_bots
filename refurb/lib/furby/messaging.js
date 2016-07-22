@@ -2,7 +2,7 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  bot.postMessageToChannel('dev', 'Test message blah' + 'Refurbished 11.6-inch MacBook Air 1.6GHz dual-core Intel Core i5');
+  bot.postMessageToChannel('dev', 'Test message ' + JSON.stringify(results[0].title));
   results.forEach(function(result) {
     console.log('Title: ' + result.title);
     bot.postMessageToChannel('dev', 'Test message');
