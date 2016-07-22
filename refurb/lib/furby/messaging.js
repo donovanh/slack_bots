@@ -2,7 +2,7 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  bot.postMessageToChannel('dev', 'text', '');
+  //bot.postMessageToChannel('dev', 'text', '');
   results.forEach(function(result) {
     bot.postMessageToChannel('dev', '', buildAttachments(result, '#764FA5'));
   }); 
