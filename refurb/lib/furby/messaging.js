@@ -2,9 +2,8 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  if (result[0]) {
     bot.postMessageToChannel('dev', 'Result: ' + result[0].description);
-  }
+
   results.forEach(function(result) {
     console.log('In loop', bot.postMessageToChannel);
     bot.postMessageToChannel('dev', '', buildAttachments(result, '#764FA5'));
