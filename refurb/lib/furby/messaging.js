@@ -2,9 +2,7 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  //results = [{title: 'a'}, {title: 'b'}];
-  var results2 = JSON.stringify(results);
-  results2.forEach(function(result) {
+  results.forEach(function(result) {
     console.log('Result ' + result.title);
     bot.postMessageToChannel('dev', 'Test message: ' + result.title);
   }); 
