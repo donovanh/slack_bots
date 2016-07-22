@@ -34,6 +34,7 @@ function checkForNewResults() {
 bot.on('start', function() {
   console.log('Bot started');
   checkForNewResults();
+  bot.postMessageToChannel('dev', 'testing 123');
 });
 
 setInterval(function() {
