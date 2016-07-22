@@ -9,10 +9,9 @@ function postNewResultsToChannel(bot, results) {
                   + currentdate.getMinutes() + ":" 
                   + currentdate.getSeconds();
   console.log(results.length + ' new results found at ' + datetime);
-  bot.postMessageToChannel('dev', 'results found...');
   results.forEach(function(result) {
-    bot.postMessageToChannel('dev', 'New item found! (' + datetime + ')', JSON.stringify(buildAttachments(result, '#764FA5')));
-    console.log('dev', 'New item found! (' + datetime + ')', JSON.stringify(buildAttachments(result, '#764FA5')));
+    bot.postMessageToChannel('dev', 'results found...');
+    bot.postMessageToChannel('dev', buildAttachments(result, '#764FA5');
   }); 
 }
 
@@ -34,11 +33,13 @@ function buildAttachments(result, color) {
       {
         "title": result.title,
         "title_link": result.link,
+        "pretext": "A new item was added to the refurb store!",
         "text": text,
         "image_url": result.image,
         "color": color,
         "mrkdwn_in": [
-          "text"
+          "text",
+          "pretext"
         ]
       }
     ]
