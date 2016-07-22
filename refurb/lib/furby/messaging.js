@@ -9,9 +9,9 @@ function postNewResultsToChannel(bot, results) {
                   + currentdate.getMinutes() + ":" 
                   + currentdate.getSeconds();
   console.log(results.length + ' new results found at ' + datetime);
-  console.log('Results: ', results);
   results.forEach(function(result) {
     bot.postMessageToChannel('dev', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
+    console.log('dev', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
   }); 
 }
 
