@@ -1,8 +1,7 @@
 /* A users module that presents a signup flow and saves the organisations, users and bots for the app */
 'use strict';
 
-const routes = require('routes'),
-      express = require('express'),
+const express = require('express'),
       app = express(),
       router = express.Router(),
       request = require('request');
