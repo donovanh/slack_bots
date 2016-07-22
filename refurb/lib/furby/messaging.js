@@ -5,7 +5,7 @@ function postNewResultsToChannel(bot, results) {
   debugger;
   // results = [{title: 'a'}, {title: }];
   results.forEach(function(result) {
-    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
+    bot.postMessageToChannel('refurbs', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
   }); 
 }
 
