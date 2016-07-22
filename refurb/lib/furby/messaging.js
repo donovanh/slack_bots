@@ -1,9 +1,16 @@
 'use strict';
 
 function postNewResultsToChannel(bot, results) {
-  console.log(results.length + ' new results found at ' + new Date().toDateString());
+  var currentdate = new Date(); 
+  var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                  + (currentdate.getMonth()+1)  + "/" 
+                  + currentdate.getFullYear() + " @ "  
+                  + currentdate.getHours() + ":"  
+                  + currentdate.getMinutes() + ":" 
+                  + currentdate.getSeconds();
+  console.log(results.length + ' new results found at ' + datetime);
   results.forEach(function(result) {
-    bot.postMessageToChannel('refurbs', 'New item found on ' + new Date().toDateString(), buildAttachments(result, '#764FA5'));
+    bot.postMessageToChannel('refurbs', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
   }); 
 }
 
