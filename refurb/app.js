@@ -33,7 +33,9 @@ function checkForNewResults() {
 
 // TODO: Clear any timed events hanging around
 // Put in a timed check to look for new items
-// Restarting was causing issues with settimeout
+setTimeout(function() {
+  checkForNewResults();
+}, 60 * 1000);
 
 bot.on('start', function() {
   console.log('Furby bot started');
