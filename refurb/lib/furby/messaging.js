@@ -11,7 +11,7 @@ function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found at ' + datetime);
   results.forEach(function(result) {
     bot.postMessageToChannel('dev', 'results found...');
-    bot.postMessageToChannel('dev', buildAttachments(result, '#764FA5');
+    bot.postMessageToChannel('dev', buildAttachments(result, '#764FA5'));
   }); 
 }
 
