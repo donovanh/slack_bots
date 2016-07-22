@@ -2,7 +2,9 @@
 
 function postNewResultsToChannel(bot, results) {
   //console.log(results.length + ' new results found');
-  bot.postMessageToChannel('refurbs', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
+  results.forEach(function(result) {
+    bot.postMessageToChannel('refurbs', 'New item added to the refurb page', buildAttachments(result, '#764FA5'));
+  }); 
 }
 
 function postMatchedResultsToUser(bot, results, user, keywords) {
