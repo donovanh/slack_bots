@@ -4,6 +4,7 @@ function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
   bot.postMessageToChannel('dev', 'Test message blah');
   results.forEach(function(result) {
+    console.log('Title: ' + result.title);
     bot.postMessageToChannel('dev', 'Test message');
   }); 
   // results = [{title: 'a'}, {title: 'b'}];
