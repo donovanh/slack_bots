@@ -4,7 +4,11 @@ function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
   results.forEach(function(result) {
     console.log('Result ' + result.title);
-    bot.postMessageToChannel('dev', 'Test message');
+    setTimeout(function() {
+      bot.postMessageToChannel('dev', 'Test message');
+    }, 500);
+
+    
   }); 
   // results = [{title: 'a'}, {title: 'b'}];
   // results.forEach(function(result) {
