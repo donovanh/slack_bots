@@ -2,13 +2,10 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
+  console.log(JSON.stringify(results, null, 2));
   results.forEach(function(result) {
     console.log('Result ' + result.title);
-    setTimeout(function() {
-      bot.postMessageToChannel('dev', 'Test message');
-    }, 500);
-
-    
+    bot.postMessageToChannel('dev', 'Test message');
   }); 
   // results = [{title: 'a'}, {title: 'b'}];
   // results.forEach(function(result) {
