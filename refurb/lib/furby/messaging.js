@@ -25,7 +25,7 @@ function buildAttachments(result, color) {
       {
         "title": result.title,
         "title_link": result.link,
-        "text": text,
+        "text": 'text',
         "image_url": result.image,
         "color": color
       }
