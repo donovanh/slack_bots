@@ -32,7 +32,7 @@ function checkForNewResults() {
 }
 
 bot.on('start', function() {
-  console.log('Bot started');
+  console.log('Furby bot started');
   checkForNewResults();
 });
 
