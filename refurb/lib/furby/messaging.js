@@ -9,6 +9,7 @@ function postNewResultsToChannel(bot, results) {
                   + currentdate.getMinutes() + ":" 
                   + currentdate.getSeconds();
   console.log(results.length + ' new results found at ' + datetime);
+  bot.postMessageToChannel('dev', 'results found...');
   results.forEach(function(result) {
     bot.postMessageToChannel('dev', 'New item found! (' + datetime + ')', JSON.stringify(buildAttachments(result, '#764FA5')));
     console.log('dev', 'New item found! (' + datetime + ')', JSON.stringify(buildAttachments(result, '#764FA5')));
