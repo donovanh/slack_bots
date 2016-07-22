@@ -2,15 +2,11 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-  bot.postMessageToChannel('dev', 'Test message ' + JSON.stringify(results[0].title));
+  debugger;
+  // results = [{title: 'a'}, {title: }];
   results.forEach(function(result) {
-    console.log('Title: ' + result.title);
-    bot.postMessageToChannel('dev', 'Test message');
+    bot.postMessageToChannel('dev', 'A new item was found on the Irish refurb store!', buildAttachments(result, '#764FA5'));
   }); 
-  // results = [{title: 'a'}, {title: 'b'}];
-  // results.forEach(function(result) {
-  //   bot.postMessageToChannel('dev', 'Test message ' + result);
-  // }); 
 }
 
 function postMatchedResultsToUser(bot, results, user, keywords) {
@@ -26,12 +22,12 @@ function buildAttachments(result, color) {
   let text = '*' + result.price + '*\n';
   text += result.description;
   return {
-    "icon_emoji": ":apple:",
+    "icon_emoji": ":green_apple:",
     "attachments": [
       {
         "title": result.title,
         "title_link": result.link,
-        "text": '',
+        "text": text,
         "image_url": result.image,
         "color": color,
         "mrkdwn_in": [
