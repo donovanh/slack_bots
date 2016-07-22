@@ -10,7 +10,7 @@ function postNewResultsToChannel(bot, results) {
                   + currentdate.getSeconds();
   console.log(results.length + ' new results found at ' + datetime);
   results.forEach(function(result) {
-    bot.postMessageToChannel('refurbs', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
+    bot.postMessageToChannel('dev', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
   }); 
 }
 
