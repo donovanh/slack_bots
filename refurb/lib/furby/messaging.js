@@ -9,6 +9,7 @@ function postNewResultsToChannel(bot, results) {
                   + currentdate.getMinutes() + ":" 
                   + currentdate.getSeconds();
   console.log(results.length + ' new results found at ' + datetime);
+  console.log('Results: ', results);
   results.forEach(function(result) {
     bot.postMessageToChannel('dev', 'New item found! (' + datetime + ')', buildAttachments(result, '#764FA5'));
   }); 
@@ -27,6 +28,7 @@ function buildAttachments(result, color) {
   let text = '*' + result.price + '*\n';
   text += result.description;
   return {
+    "icon_emoji": ":apple:",
     "attachments": [{
       "title": result.title,
       "title_link": result.link,
