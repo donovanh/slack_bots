@@ -3,9 +3,10 @@
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
   results.forEach(function(result) {
-    console.log('In the loop');
-    bot.postMessageToChannel('dev', 'results found...');
-    bot.postMessageToChannel('dev', buildAttachments(result, '#764FA5'));
+    setTimeout(function() {
+      bot.postMessageToChannel('dev', 'results found...');
+      bot.postMessageToChannel('dev', buildAttachments(result, '#764FA5'));
+    }, 100);
   }); 
 }
 
