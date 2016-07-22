@@ -2,7 +2,7 @@
 
 function postNewResultsToChannel(bot, results) {
   console.log(results.length + ' new results found');
-    bot.postMessageToChannel('dev', 'Result: ' + result[0].description);
+    bot.postMessageToChannel('dev', 'test');
 
   results.forEach(function(result) {
     console.log('In loop', bot.postMessageToChannel);
