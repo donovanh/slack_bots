@@ -27,10 +27,7 @@ function buildAttachments(result, color) {
         "title_link": result.link,
         "text": text,
         "image_url": result.image,
-        "color": color,
-        "mrkdwn_in": [
-          "text"
-        ]
+        "color": color
       }
     ]
   };
