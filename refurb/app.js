@@ -33,12 +33,11 @@ function checkForNewResults() {
 
 // TODO: Clear any timed events hanging around
 // Put in a timed check to look for new items
-setTimeout(function() {
-  checkForNewResults();
-}, 60 * 1000);
+// setTimeout(function() {
+//   checkForNewResults();
+// }, 60 * 1000);
 
 bot.on('start', function() {
-  console.log('Furby bot started');
   checkForNewResults();
 });
 
